@@ -1,0 +1,12 @@
+moduleId: fx-rate-93b39b
+description: Fetches the current temperature for Berlin (latitude 52.52,
+  longitude 13.41) using the Open-Meteo API and returns the temperature in
+  Celsius as a number.
+tools:
+  - fetchTemperature
+outbound:
+  - protocol: http
+    target: open-meteo
+    contract:
+      kind: openapi
+      source: https://app.ndflow.de/openapi/open-meteo.json

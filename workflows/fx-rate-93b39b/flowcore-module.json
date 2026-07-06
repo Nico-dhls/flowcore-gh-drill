@@ -1,0 +1,44 @@
+{
+  "moduleId": "fx-rate-93b39b",
+  "version": "0.1.0",
+  "name": "Fx Rate 93b39b",
+  "description": "Module fx-rate-93b39b. Description set via flowcore-module.override.json or this default.",
+  "sdkMinVersion": "0.1.0",
+  "env": [
+    {
+      "name": "API_OPEN_METEO_COM_BASE",
+      "type": "config",
+      "label": "Api Open Meteo Com Base",
+      "required": false,
+      "description": "API base URL for this target. Defaults to the value baked at build time; override it only to point at the SAME host with a required token or path segment included in the base — for example https://api.telegram.org/bot<token>. The host must stay the same (a different host is refused in production)."
+    }
+  ],
+  "outbound": [
+    {
+      "target": "open-meteo",
+      "host": "geocoding-api.open-meteo.com"
+    }
+  ],
+  "builtAt": "2026-07-06T17:37:00.925Z",
+  "builtBy": "build-runner",
+  "validate": {
+    "fixtures": {
+      "fetchTemperature": {}
+    },
+    "assertions": [],
+    "outputs": {
+      "fetchTemperature": {
+        "type": "object",
+        "properties": {
+          "temperature": {
+            "type": "number",
+            "description": "Current temperature in Celsius"
+          }
+        },
+        "required": [
+          "temperature"
+        ]
+      }
+    }
+  }
+}
